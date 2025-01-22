@@ -1,0 +1,59 @@
+:root {
+  --primary-background: #191724;
+  --text-color: #e0def4;
+  --subtle-text-color: #908caa;
+  --pine-color: #31748f;
+  --foam-color: #9ccfd8;
+}
+
+html {
+  background-color: var(--primary-background);
+  font-family: "SF Mono";
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--foam-color);
+}
+
+.splash {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+.ls {
+  margin: auto;
+}
+
+.ls div.animate {
+  display: flex;
+  flex-direction: column;
+}
+
+.ls-elem {
+  display: flex;
+  gap: 1rem;
+}
+
+.term {
+  color: var(--subtle-text-color);
+}
+
+.command {
+  color: var(--pine-color);
+}
+
+.directory {
+  color: var(--foam-color);
+}
+
+.file {
+  color: var(--text-color);
+}
+
+.menu-item:hover {
+  background-color: var(--text-color);
+  color: var(--primary-background);
+}

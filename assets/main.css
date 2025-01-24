@@ -2,8 +2,11 @@
   --primary-background: #191724;
   --text-color: #e0def4;
   --subtle-text-color: #908caa;
+  --base-color: #1e1e2e;
   --pine-color: #31748f;
   --foam-color: #9ccfd8;
+  --mauve-color: #cba6f7;
+  --blue-color: #89b4fa;
 }
 
 html {
@@ -21,20 +24,32 @@ a {
   display: flex;
   height: 100vh;
   margin: 0;
+  font-size: 28px;
 }
 
 .ls {
+  display: grid;
   margin: auto;
 }
 
 .ls div.animate {
   display: flex;
   flex-direction: column;
+  grid-col: 0;
 }
 
 .ls-elem {
   display: flex;
   gap: 1rem;
+  grid-col: 1;
+}
+
+.host {
+  color: var(--mauve-color);
+}
+
+.path {
+  color: var(--base-color);
 }
 
 .term {

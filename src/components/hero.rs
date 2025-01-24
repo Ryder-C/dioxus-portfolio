@@ -2,11 +2,20 @@ use dioxus::prelude::*;
 
 #[component]
 pub fn Hero() -> Element {
+    use EntryType::*;
     rsx! {
         div {
             class: "ls",
             div {
                 class: "ls-elem",
+                p {
+                    class: "host",
+                    "ryder-solutions"
+                }
+                p {
+                    class: "path",
+                    "~"
+                }
                 p {
                     class: "term",
                     "$"
@@ -21,32 +30,46 @@ pub fn Hero() -> Element {
                 }
                 p {
                     class: "directory",
-                    "ryder-solutions"
+                    "."
                 }
             }
             div {
-                class: "animate",
-                ListElement { is_dir: true, name: "projects" }
-                ListElement { is_dir: true, name: "blog" }
-                ListElement { is_dir: false, name: "about_me" }
-                ListElement { is_dir: false, name: "skills" }
+                class: "animate ",
+                ListElement { typ: Directory, name: "projects" }
+                ListElement { typ: Directory, name: "blog" }
+                ListElement { typ: File, name: "about_me" }
+                ListElement { typ: File, name: "skills" }
             }
         }
     }
 }
 
+#[derive(PartialEq, Clone)]
+enum EntryType {
+    Directory,
+    File,
+}
+
 #[derive(PartialEq, Clone, Props)]
 struct ListElementProps {
-    is_dir: bool,
+    typ: EntryType,
     name: String,
 }
 
 #[component]
 fn ListElement(props: ListElementProps) -> Element {
-    rsx! {
-        a {
-            class: if props.is_dir { "menu-item directory" } else { "menu-item file" },
-            if props.is_dir { "{props.name}/" } else { "{props.name}.md" }
-        }
+    match props.typ {
+        EntryType::Directory => rsx! {
+            a {
+                class: "menu-item directory",
+                "{props.name}/"
+            }
+        },
+        EntryType::File => rsx! {
+            a {
+                class: "menu-item file",
+                "{props.name}.md"
+            }
+        },
     }
 }

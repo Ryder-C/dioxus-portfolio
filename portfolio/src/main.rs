@@ -3,20 +3,23 @@ mod views;
 
 use dioxus::prelude::*;
 use document::{Link, Script, Stylesheet};
-use views::{home::Home, projects::Projects};
+use views::{blog::Blog, home::Home, projects::Projects};
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 const FONT_CSS: Asset = asset!("/assets/font.css");
 const MAIN_JS: Asset = asset!("/assets/js/main.js");
 
-#[derive(Routable, Clone)]
+#[derive(Routable, PartialEq, Clone)]
 enum Route {
     #[route("/")]
     Home {},
 
     #[route("/projects")]
     Projects {},
+
+    #[route("/blog")]
+    Blog {},
 }
 
 fn main() {

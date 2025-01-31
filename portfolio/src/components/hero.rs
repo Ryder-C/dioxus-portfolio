@@ -1,5 +1,7 @@
 use dioxus::prelude::*;
 
+use crate::Route;
+
 #[component]
 pub fn Hero() -> Element {
     use EntryType::*;
@@ -35,10 +37,10 @@ pub fn Hero() -> Element {
             }
             div {
                 class: "animate ",
-                ListElement { typ: Directory, name: "projects" }
-                ListElement { typ: Directory, name: "blog" }
-                ListElement { typ: File, name: "about_me" }
-                ListElement { typ: File, name: "skills" }
+                ListElement { typ: Directory, name: "projects", route: Route::Projects {} }
+                ListElement { typ: Directory, name: "blog", route: Route::Blog {} }
+                ListElement { typ: File, name: "about_me", route: Route::Home {} }
+                ListElement { typ: File, name: "skills", route: Route::Home {} }
             }
         }
     }
@@ -53,6 +55,7 @@ enum EntryType {
 #[derive(PartialEq, Clone, Props)]
 struct ListElementProps {
     typ: EntryType,
+    route: Route,
     name: String,
 }
 
@@ -60,14 +63,16 @@ struct ListElementProps {
 fn ListElement(props: ListElementProps) -> Element {
     match props.typ {
         EntryType::Directory => rsx! {
-            a {
+            Link {
                 class: "menu-item directory",
+                to: props.route,
                 "{props.name}/"
             }
         },
         EntryType::File => rsx! {
-            a {
+            Link {
                 class: "menu-item file",
+                to: props.route,
                 "{props.name}.md"
             }
         },

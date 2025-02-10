@@ -8,7 +8,8 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-dioxus_markdown = { git = "https://github.com/DioxusLabs/markdown.git", version = "0.3.0-alpha.1" }
+# dioxus_markdown = { git = "https://github.com/DioxusLabs/markdown.git", version = "0.3.0-alpha.1" }
+dioxus_markdown = { git = "https://github.com/Ryder-C/markdown.git" }
 wasm-bindgen = "=0.2.97"
 macros = { path = "../macros" }
 

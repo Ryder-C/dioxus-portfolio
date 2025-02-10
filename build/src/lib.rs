@@ -98,7 +98,7 @@ impl MdDioxusArtifact {
         // rust
         fs::write(
             path.join(format!("{}.rs", self.name)),
-            format!("{}", self.content),
+            format!("{{ {} }}", self.content),
         )
         .unwrap();
     }

@@ -53,8 +53,24 @@ impl MarkdownBuilder {
                         let name = format!("__build_{category}_{}", file.name);
                         let path_name = format!("{name}.md");
                         let content = quote! {
-                            ::dioxus_markdown::Markdown {
-                                content: include_str!(#path_name),
+                            let html = ::comrak::markdown_to_html_with_plugins(
+                                include_str!(#path_name),
+                                &::comrak::Options::default(),
+                                &::comrak::Plugins::builder()
+                                    .render(
+                                        ::comrak::RenderPlugins::builder()
+                                            .codefence_syntax_highlighter(&::comrak::plugins::syntect::SyntectAdapter::new(
+                                                None,
+                                            ))
+                                            .build(),
+                                    )
+                                    .build(),
+                            );
+
+                            rsx! {
+                                div {
+                                    dangerous_inner_html: "{html}"
+                                }
                             }
                         };
 
@@ -82,7 +98,7 @@ impl MdDioxusArtifact {
         // rust
         fs::write(
             path.join(format!("{}.rs", self.name)),
-            format!("rsx! {{ {} }}", self.content),
+            format!("{}", self.content),
         )
         .unwrap();
     }

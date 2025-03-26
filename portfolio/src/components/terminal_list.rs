@@ -33,7 +33,7 @@ pub fn TerminalList(props: TerminalListProps) -> Element {
                     "ryder-solutions"
                 }
                 p {
-                    class: "path",
+                    class: "term",
                     "~"
                 }
                 p {

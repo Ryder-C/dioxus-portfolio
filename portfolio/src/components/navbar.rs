@@ -16,7 +16,7 @@ pub fn Navbar() -> Element {
                         "ryder-solutions"
                     }
                     p {
-                        class: "path",
+                        class: "term",
                         "~"
                     }
                     p {

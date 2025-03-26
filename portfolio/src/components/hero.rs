@@ -15,7 +15,7 @@ pub fn Hero() -> Element {
                     "ryder-solutions"
                 }
                 p {
-                    class: "path",
+                    class: "term",
                     "~"
                 }
                 p {

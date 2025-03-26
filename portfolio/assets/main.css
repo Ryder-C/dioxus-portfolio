@@ -1,74 +1,192 @@
 :root {
-  --primary-background: #191724;
-  --text-color: #e0def4;
-  --subtle-text-color: #908caa;
-  --base-color: #1e1e2e;
-  --pine-color: #31748f;
-  --foam-color: #9ccfd8;
-  --mauve-color: #cba6f7;
-  --blue-color: #89b4fa;
+    --primary-background: #191724;
+    --text-color: #e0def4;
+    --subtle-text-color: #908caa;
+    --base-color: #1e1e2e;
+    --pine-color: #31748f;
+    --foam-color: #9ccfd8;
+    --mauve-color: #cba6f7;
+    --blue-color: #89b4fa;
+    --green-color: #a6e3a1;
 }
 
 html {
-  background-color: var(--primary-background);
-  font-family: "SF Mono";
-  color: var(--text-color);
+    background-color: var(--primary-background);
+    font-family: "SF Mono";
+    color: var(--text-color);
 }
 
 a {
-  text-decoration: none;
-  color: var(--foam-color);
+    text-decoration: none;
+    color: var(--foam-color);
 }
 
 .splash {
-  display: flex;
-  height: 100vh;
-  margin: 0;
-  font-size: 28px;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-size: 28px;
 }
 
 .ls {
-  display: grid;
-  margin: auto;
+    display: grid;
+    margin: auto;
 }
 
 .ls div.animate {
-  display: flex;
-  flex-direction: column;
-  grid-col: 0;
+    display: flex;
+    flex-direction: column;
+    grid-col: 0;
 }
 
 .ls-elem {
-  display: flex;
-  gap: 1rem;
-  grid-col: 1;
+    display: flex;
+    gap: 1rem;
+    grid-col: 1;
 }
 
 .host {
-  color: var(--mauve-color);
+    color: var(--mauve-color);
 }
 
 .path {
-  color: var(--base-color);
+    color: var(--base-color);
 }
 
 .term {
-  color: var(--subtle-text-color);
+    color: var(--subtle-text-color);
 }
 
 .command {
-  color: var(--pine-color);
+    color: var(--green-color);
+}
+
+.flags {
+    color: var(--text-color);
 }
 
 .directory {
-  color: var(--foam-color);
+    color: var(--foam-color);
 }
 
 .file {
-  color: var(--text-color);
+    color: var(--text-color);
 }
 
 .menu-item:hover {
-  background-color: var(--text-color);
-  color: var(--primary-background);
+    background-color: var(--text-color);
+    color: var(--primary-background);
+}
+
+.navbar {
+    background-color: var(--base-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--subtle-text-color);
+    font-size: 1.2rem;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    background-color: var(--text-color);
+    color: var(--primary-background);
+}
+
+.nav-link.directory {
+    color: var(--foam-color);
+}
+
+.nav-link.file {
+    color: var(--text-color);
+}
+
+.nav-link:hover.directory,
+.nav-link:hover.file {
+    color: var(--primary-background);
+}
+
+.project-item {
+    margin: 0.5rem 0;
+}
+
+.project-title {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.project-description {
+    color: var(--subtle-text-color);
+    font-size: 0.9em;
+    margin-left: 1rem;
+}
+
+.project-item .menu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.project-item .menu-item:hover {
+    background-color: var(--text-color);
+    color: var(--primary-background);
+}
+
+.project-item .menu-item:hover .project-title,
+.project-item .menu-item:hover .project-description {
+    color: var(--primary-background);
+}
+
+.terminal-history {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.command-block {
+    background-color: var(--base-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--subtle-text-color);
+    font-size: 1.2rem;
+}
+
+.command-block:last-child {
+    border-bottom: none;
+}
+
+.command-block-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.command-block .ls-elem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.command-block .animate {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
 }

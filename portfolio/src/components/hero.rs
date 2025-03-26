@@ -28,19 +28,16 @@ pub fn Hero() -> Element {
                 }
                 p {
                     class: "flags",
-                    "-F"
-                }
-                p {
-                    class: "directory",
-                    "."
+                    "-1F"
                 }
             }
             div {
                 class: "animate ",
                 ListElement { typ: Directory, name: "projects", route: Route::Projects {} }
                 ListElement { typ: Directory, name: "blog", route: Route::Blog {} }
-                ListElement { typ: File, name: "about_me", route: Route::Home {} }
-                ListElement { typ: File, name: "skills", route: Route::Home {} }
+                ListElement { typ: File, name: "about_me.md", route: Route::Home {} }
+                ListElement { typ: File, name: "skills.md", route: Route::Home {} }
+                ListElement { typ: File, name: "resume.pdf", route: Route::Home {} }
             }
         }
     }
@@ -73,7 +70,7 @@ fn ListElement(props: ListElementProps) -> Element {
             Link {
                 class: "menu-item file",
                 to: props.route,
-                "{props.name}.md"
+                "{props.name}"
             }
         },
     }

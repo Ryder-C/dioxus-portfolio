@@ -11,6 +11,9 @@ dioxus = { version = "0.6.0", features = ["router"] }
 wasm-bindgen = "=0.2.97"
 macros = { path = "../macros" }
 comrak = "0.35.0"
+web-sys = { version = "0.3", features = ["console"] }
+log = "0.4"
+env_logger = "0.10"
 
 [build-dependencies]
 build = { path = "../build" }

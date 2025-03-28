@@ -85,6 +85,13 @@ a {
     font-size: 1.2rem;
 }
 
+.navbar .ls-elem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
 .navbar-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -101,12 +108,13 @@ a {
 
 .navbar-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 0rem;
     align-items: center;
+    margin-left: 1rem;
 }
 
 .nav-link {
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.7rem;
 }
 
 .nav-link:hover {
@@ -114,6 +122,20 @@ a {
     color: var(--primary-background);
 }
 
+.navbar-links .nav-link.directory {
+    color: var(--foam-color);
+}
+
+.navbar-links .nav-link.file {
+    color: var(--text-color);
+}
+
+.navbar-links .nav-link:hover.directory,
+.navbar-links .nav-link:hover.file {
+    color: var(--primary-background);
+}
+
+/* Remove any potential conflicting styles */
 .nav-link.directory {
     color: var(--foam-color);
 }
@@ -175,12 +197,15 @@ a {
     border-bottom: none;
 }
 
-.command-block-content {
+.command-block .navbar-content {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.command-block .ls-elem {
+.command-block .navbar-brand {
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -189,4 +214,10 @@ a {
 .command-block .animate {
     margin-left: 1rem;
     margin-top: 0.5rem;
+}
+
+.command-block .ls-elem {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
 }

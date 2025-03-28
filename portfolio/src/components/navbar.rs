@@ -7,58 +7,58 @@ pub fn Navbar() -> Element {
         nav {
             class: "navbar",
             div {
-                class: "navbar-content",
-                div {
-                    class: "navbar-brand",
-                    Link {
-                        class: "host",
-                        to: Route::Home {},
-                        "ryder-solutions"
-                    }
-                    p {
-                        class: "term",
-                        "~"
-                    }
-                    p {
-                        class: "term",
-                        "$"
-                    }
-                    p {
-                        class: "command",
-                        "ls"
-                    }
-                    p {
-                        class: "flags",
-                        "-F"
-                    }
+                class: "ls-elem",
+                p {
+                    class: "host",
+                    "ryder-solutions"
                 }
-                div {
-                    class: "navbar-links",
-                    Link {
-                        class: "nav-link directory",
-                        to: Route::Projects {},
-                        "projects/"
-                    }
-                    Link {
-                        class: "nav-link directory",
-                        to: Route::Blog {},
-                        "blog/"
-                    }
-                    Link {
-                        class: "nav-link file",
-                        to: Route::Home {},
-                        "about_me.md"
-                    }
-                    Link {
-                        class: "nav-link file",
-                        to: Route::Home {},
-                        "skills.md"
-                    }
-                    Link {
-                        class: "nav-link file",
-                        to: Route::Home {},
-                        "resume.pdf"
-                    }
+                p {
+                    class: "path",
+                    "~"
+                }
+                p {
+                    class: "term",
+                    "$"
+                }
+                p {
+                    class: "command",
+                    "ls"
+                }
+                p {
+                    class: "flags",
+                    "-F"
+                }
+                p {
+                    class: "directory",
+                    "."
+                }
+            }
+            div {
+                class: "navbar-links",
+                Link {
+                    class: "nav-link directory",
+                    to: Route::Projects {},
+                    "projects/"
+                }
+                Link {
+                    class: "nav-link directory",
+                    to: Route::Blog {},
+                    "blog/"
+                }
+                Link {
+                    class: "nav-link file",
+                    to: Route::Home {},
+                    "about_me.md"
+                }
+                Link {
+                    class: "nav-link file",
+                    to: Route::Home {},
+                    "skills.md"
+                }
+                Link {
+                    class: "nav-link file",
+                    to: Route::Home {},
+                    "resume.pdf"
                 }
             }
         }
